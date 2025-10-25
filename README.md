@@ -5,6 +5,8 @@ This project is an Eleventy template for creating books, inspired by [Writebook]
 - Easily create a book by creating a directory and writing markdown files.
 - Support books in English and Chinese.
 
+I've placed the demo books in the demo branch; you can check the `demo` branch for the book details.
+
 You can find the details of the demo books [here](https://github.com/ginqi7/11ty-createbook/tree/demo/books).
 
 ## Demo
