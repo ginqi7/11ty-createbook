@@ -1,0 +1,20 @@
+---
+type: index
+layout: base.njk
+---
+
+<main id="main" class="books">
+  <div class="library">
+    {% for book in collections.books %}
+    <figure class="library__book theme--black">
+      <div>
+        <div>{% include "cover.njk" %}</div>
+        <h2 class="flex flex-column">
+          <span class="book-title">{{ book.title }}</span>
+          <span class="book-author">{{ book.author }}</span>
+        </h2>
+      </div>
+    </figure>
+    {% endfor %}
+  </div>
+</main>

@@ -1,0 +1,6 @@
+{%set language = page.content | language %}
+<small class="toc__wordcount txt-small--responsive">
+  {{ page.content | wordcount }}
+  <!-- zh or en -->
+  {%if language == 'zh' %} 字 {%else%} words {%endif%}
+</small>

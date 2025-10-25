@@ -1,0 +1,35 @@
+---
+type: book
+pagination:
+  data: collections.books
+  size: 1
+  alias: book
+permalink: "/books/{{ book.title }}/"
+layout: base
+---
+
+{% set title = book.title %}
+
+<main id="main" class="book">
+  <aside class="txt-align-center margin-block">
+    <div class="book__sidebar library__book theme--black">
+      {% include "cover.njk" %}
+    </div>
+  </aside>
+  <div
+    class="arrangement__container toc__container full-width txt-align-center"
+  >
+    <h1
+      class="flex flex-column txt-tight-lines txt-align-start margin-block-end"
+    >
+      <strong class="book__title txt-x-large--responsive"
+        >{{book.title}}</strong
+      >
+      <span class="txt-large--responsive txt-normal"></span>
+      <span class="txt-large--responsive txt-normal">{{book.author}}</span>
+    </h1>
+    {% include 'book-view-controller.njk' %}
+    <!-- Views: List or Grid -->
+    {% include 'book-view.njk' %}
+  </div>
+</main>

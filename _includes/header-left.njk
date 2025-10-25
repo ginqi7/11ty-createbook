@@ -1,0 +1,19 @@
+<div class="header-left">
+  {% if type != 'index' %}
+  <!-- Page -->
+  {% if type == 'page' %}
+  <label class="btn sidebar__toggle" data-controller="sidebar">
+    <input
+      type="checkbox"
+      id="sidebar-toggle"
+      data-sidebar-target="toggle"
+      data-action="sidebar#toggle"
+    />
+    <img src="/assets/icons/sidebar.svg" width="24" height="24" />
+  </label>
+  {% endif %}
+  <a href="/" class="btn">
+    <img src="/assets/icons/arrow-left.svg" />
+  </a>
+  {% endif %}
+</div>

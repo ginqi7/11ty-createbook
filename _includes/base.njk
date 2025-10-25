@@ -1,0 +1,15 @@
+<!DOCTYPE html lang="{{lang}}">
+<html>
+  <!-- Head -->
+  {% include 'head.njk' %}
+  <body>
+    <!-- Header -->
+    {% include 'header.njk' %}
+    <!-- Main -->
+    {{ content | safe }}
+    <!-- Sidebar -->
+    {% include 'sidebar.njk' %}
+    <!-- Footer -->
+    {% include 'footer.njk' %}
+  </body>
+</html>

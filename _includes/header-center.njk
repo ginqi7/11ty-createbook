@@ -1,0 +1,22 @@
+<div class="header-center">
+  {% if type == "index" %}
+  <a href="/">
+    <img class="icon" src="/assets/icons/create-book.png"/>
+  </a>
+  <span class="header-title">Createbook</span>
+  {% else %}
+  <a href="/">
+    <img src="/assets/icons/bookshelf.svg" />
+  </a>
+  {% set href = page.filePathStem | parentPath %}
+  <span>▸</span>
+  {% if type == "page" %}
+  <a href="{{ href }}">
+    <strong> {{ title or page.filePathStem | bookTitle }} </strong>
+  </a>
+  <span>▸</span>
+  <strong>{{ name or page.fileSlug }}</strong>
+  {% elif type == "book" %}
+  <strong>{{ book.title }}</strong>
+  {% endif %} {% endif %}
+</div>

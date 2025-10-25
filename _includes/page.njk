@@ -1,0 +1,14 @@
+---
+type: page
+layout: base
+---
+
+<!-- page name -->
+{% set name = name or page.fileSlug %}
+<!-- parent path -->
+{% set parentPath = page.url | parentPath %}
+<!-- book title -->
+{% set title = title or (page.filePathStem | bookTitle) %}
+<main id="main">
+  <article>{{ content | safe }}</article>
+</main>

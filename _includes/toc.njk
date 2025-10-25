@@ -1,0 +1,26 @@
+<!-- Current Page -->
+{% set currentPage = collections.pages | getCollectionItem %}
+<!-- Same booke pages -->
+{% set pages = collections.pages | sameBookPages(currentPage) | sortPages %}
+<menu
+  class="sidebar__content toc flex flex-column"
+  data-eusoft-scrollable-element="1"
+>
+  <h1 class="" data-eusoft-scrollable-element="1">
+    {{ title or page.filePathStem | bookTitle }}
+  </h1>
+  {% for page in pages %}
+  <li class="flex min-width">
+    <a
+      class="toc__title min-width"
+      data-turbo-frame="_top"
+      href="{{ page.url }}"
+    >
+      <!-- Current page name -->
+      <span class="overflow-ellipsis"
+        >{{ page.data.name or page.fileSlug }}</span
+      >
+    </a>
+  </li>
+  {% endfor %}
+</menu>

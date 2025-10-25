@@ -1,0 +1,36 @@
+.btn {
+    min-inline-size: 3ch;
+    --transition: 300ms ease;
+    align-items: center;
+    background-color: var(--btn-background, transparent);
+    border-radius: var(--btn-border-radius, 2em);
+    border: var(--btn-border-size, 1px) solid var(--btn-border-color, var(--color-subtle-dark));
+    color: var(--btn-color, var(--color-ink));
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 1em;
+    font-weight: 600;
+    gap: var(--btn-gap, 0.5em);
+    justify-content: center;
+    padding: var(--btn-padding, 0.5em 0.5em);
+    pointer-events: auto;
+    transition: background-color var(--transition), border var(--transition), color var(--transition), filter var(--transition), opacity var(--transition);
+}
+
+.btn img {
+    width: 24px;
+    height: 24px;
+}
+
+.next_page {
+    max-inline-size: 50ch;
+    min-inline-size: 10ch;
+    padding: var(--btn-padding, 0.5em 1.1em);
+}
+
+.btn {
+    &:has(input:checked) {
+        background: var(--color-subtle-dark);
+        filter: invert(1);
+    }
+}

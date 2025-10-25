@@ -1,0 +1,34 @@
+<!-- Next Page -->
+{% set nextPage = collections.pages | getNextCollectionItem %}
+<!-- Current Page -->
+{% set currentPage = collections.pages | getCollectionItem %}
+<!-- Add Next Page Button -->
+
+<footer id="footer">
+  <nav class="flex align-center gap justify-center">
+    {% if (nextPage and nextPage.data.title == currentPage.data.title) %}
+    <a class="btn next_page" href="{{ nextPage.url }}">
+      <span class="overflow-ellipsis"> Next: {{ nextPage.fileSlug }} </span>
+      <img
+        aria-hidden="true"
+        src="/assets/icons/arrow-right.svg"
+        width="24"
+        height="24"
+      />
+    </a>
+    {% else %}
+    <a class="flex" href="https://github.com/ginqi7/createbook">
+      <img src="/assets/icons/create-book.png" width="24" height="24" />
+      <span>Made with Createbook</span>
+    </a>
+    <a class="flex" href="https://once.com/writebook">
+      <img
+        src="https://once.com/assets/images/logo-writebook.webp"
+        width="24"
+        height="24"
+      />
+      <span>Inspired by Writebook</span>
+    </a>
+    {% endif %}
+  </nav>
+</footer>

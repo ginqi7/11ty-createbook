@@ -1,0 +1,26 @@
+.toc:is(.sidebar__content) {
+    --inline-padding: clamp(var(--inline-space), 6%, calc(var(--inline-space) * 3));
+
+    inline-size: 25vw;
+    inset: 0 auto 0 0;
+    max-block-size: 100%;
+    overflow: auto;
+    padding-block-start: var(--btn-size);
+    padding-inline: var(--inline-padding);
+    position: absolute;
+}
+
+.sidebar__toggle {
+    transition: margin-inline-end 0.2s ease-out;
+    z-index: 1;
+
+    :has(#sidebar-toggle:checked) & {
+        @media (min-width: 70ch) {
+            margin-inline-end: calc(25vw - var(--btn-size));
+        }
+    }
+
+    @media (max-width: 70ch) {
+        display: none;
+    }
+}

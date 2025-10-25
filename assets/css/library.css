@@ -1,0 +1,38 @@
+.library {
+    --gap: clamp(var(--inline-space), 2cqi, calc(var(--inline-space) * 3));
+    --hover-size: 0;
+
+    display: grid;
+    gap: var(--block-space) var(--gap);
+    grid-template-columns: repeat(auto-fit, minmax(max(150px, 14cqi), 1fr));
+    padding: var(--gap);
+}
+
+.library .book-title {
+    font-size: 25px;
+}
+
+.library .book-author {
+    font-size: 20px;
+    font-weight: 200;
+}
+
+
+.library__book {
+    --row-gap: calc(var(--block-space) * 0.2);
+
+    container-type: inline-size;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    text-align: center;
+}
+
+.library__book--empty {
+    display: inline-grid;
+    place-items: center;
+
+    * {
+        grid-area: 1 / 1;
+    }
+}

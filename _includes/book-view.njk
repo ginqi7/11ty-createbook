@@ -1,0 +1,26 @@
+<div class="position-relative">
+    <menu class="toc margin-none" tabindex="0">
+    {% for page in book.pages | sortPages %}
+    <!-- If the page is empty -->
+    {% set word = page.content | wordcount%}
+    <!-- it is a leaf section -->
+    {% if word==0 %} {% set leaf_section = "toc__leaf--section" %} {% endif %}
+    <!-- toc__leaf--section -->
+    <item class="arrangement__item toc__leaf {{ leaf_section }}">
+      {% set page_name = page.data.name or page.fileSlug %}
+      <div class="toc__thumbnail">
+        <a class="toc__link" href="{{ page.url }}"> </a>
+        {% if leaf_section %}
+        <span class="txt-align-center"><p>{{ page_name }}</p></span>
+        <!-- limitN(500) 单纯的 Limit 会打破 tag -->
+        {% else %} {{ page.content | safe }} {% endif %}
+      </div>
+
+      <a class="toc__title min-width" href="{{ page.url }}">
+        <span class="overflow-ellipsis">{{ page_name }}</span>
+      </a>
+      {% if not leaf_section %} {% include "word-count.njk" %} {% endif%}
+    </item>
+    {% endfor %}
+  </menu>
+</div>

@@ -1,0 +1,82 @@
+/* Header 主容器样式 */
+.custom-header {
+    display: flex;
+    /* 启用 Flexbox 布局 */
+    justify-content: space-between;
+    /* 元素两端对齐，中间元素自动分配剩余空间 */
+    align-items: center;
+    /* 垂直居中 */
+    padding: 12px 20px;
+    /* 上下内边距12px，左右内边距20px */
+    color: #333;
+    /* 默认文字颜色 */
+    font-size: 16px;
+}
+
+.custom-header input {
+    display: none;
+}
+
+.custom-header img {
+    width: 24px;
+    height: 24px;
+
+}
+
+.custom-header .icon {
+    width: 48px;
+    height: 48px;
+}
+
+.header-title {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+
+/* 左、中、右三个区域的通用样式 */
+.header-left,
+.header-center,
+.header-right {
+    display: flex;
+    /* 内部也使用 Flexbox，用于对齐图标和文字 */
+    align-items: center;
+}
+
+/* 中间区域特定样式 */
+.header-center {
+    gap: 10px;
+    /* 设置子元素之间的间距 */
+}
+
+.header-center .title {
+    font-weight: bold;
+    /* 标题文字加粗 */
+}
+
+/* 右侧区域特定样式 */
+.header-right {
+    gap: 20px;
+    /* 设置右侧图标之间的间距 */
+}
+
+/* 图标样式 */
+.custom-header i {
+    font-size: 20px;
+    /* 设置图标大小 */
+    color: #555;
+    /* 设置图标颜色 */
+    cursor: pointer;
+    /* 鼠标悬停时显示手型光标 */
+    transition: color 0.2s;
+    /* 添加颜色变化的过渡效果 */
+}
+
+.custom-header i:hover {
+    color: #000;
+    /* 鼠标悬停时变深色 */
+}
+
+footer {
+    margin-bottom: 20px;
+}
