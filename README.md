@@ -5,9 +5,11 @@ This project is an Eleventy template for creating books, inspired by [Writebook]
 - Easily create a book by creating a directory and writing markdown files.
 - Support books in English and Chinese.
 
+You can find the details of the demo books [here](https://github.com/ginqi7/11ty-createbook/tree/demo/books).
+
 ## Demo
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fginqi7%2-11ty-createbook)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-name=11ty-createbook&s=https%3A%2F%2Fgithub.com%2Fginqi7%2F11ty-createbook)
 
 - [Demo](https://11ty-createbook.vercel.app)
 
