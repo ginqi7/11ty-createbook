@@ -37,6 +37,7 @@ npm install
 
 ### Run Eleventy
 
+
 Generate a production-ready build to the `_site` folder:
 
 ```
@@ -48,3 +49,25 @@ Or build and host on a local development server:
 ```
 npx @11ty/eleventy --serve
 ```
+
+## Docker
+### Build
+```
+ git clone https://github.com/ginqi7/11ty-createbook.git 11ty-createbook
+ cd 11ty-createbook
+ docker build -t 11ty-createbook .
+```
+
+
+### Start Serve
+In your books directory:
+```
+docker run -p 8080:8080 -v $(pwd):/app/books 11ty-createbook
+```
+
+### Start export
+In your books directory:
+```
+docker run -v $(pwd):/app/books -v $(pwd)/_site:/app/_site 11ty-createbook npx eleventy 
+```
+
