@@ -17,17 +17,27 @@ You can find the details of the demo books [here](https://github.com/ginqi7/11ty
 
 ## Getting Started
 
-### 2. Clone the repository
+### Clone the repository
 
 ```
 git clone https://github.com/ginqi7/11ty-createbook
 ```
 
-### 3. Navigate to the directory
+### Navigate to the directory
 
 ```
 cd 11ty-createbook
 ```
+
+### Write books.
+```
+cd books
+mkdir "Your First Book"
+cd "Your First Book"
+vim "Firest Chapter.md"
+```
+
+You can view the details of my demo books [here](https://github.com/ginqi7/11ty-createbook/tree/demo/books).
 
 ### Install dependencies
 
@@ -51,6 +61,7 @@ npx @11ty/eleventy --serve
 ```
 
 ## Docker
+By utilizing the Docker image, you can write books without needing the 11ty-createbook directory.
 ### Build
 ```
  git clone https://github.com/ginqi7/11ty-createbook.git 11ty-createbook
