@@ -26,6 +26,9 @@
     margin: auto;
     transition: background 300ms ease;
 
+    background: url("../covers/default.jpg") no-repeat center;
+    background-size: cover;
+    
     @media (min-width: 70ch) {
         max-block-size: var(--cover-height, 75vh);
     }
