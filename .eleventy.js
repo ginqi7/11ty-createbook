@@ -76,6 +76,14 @@ export default function (eleventyConfig) {
         const directoryPath = path.join(__dirname, "books");
         return getAllBookInfos(collectionApi, directoryPath);
     });
+
+    // add some global variables.
+    var createbookBase = "/";
+    if (process.env.CREATEBOOK_BASE) {
+        createbookBase = process.env.CREATEBOOK_BASE;
+    } 
+    eleventyConfig.addGlobalData("createbookBase", createbookBase);
+    
 }
 
 function getAllBookInfos(collectionApi, dirPath) {
