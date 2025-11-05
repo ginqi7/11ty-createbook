@@ -1,5 +1,15 @@
 {
+  "name": "11ty-createbook",
+  "version": "0.0.1",
+  "description": "an Eleventy template for creating books, inspired by Writebook.",
+  "scripts": {
+    "build": "npx @11ty/eleventy",
+    "serve": "npx @11ty/eleventy --serve"
+  },
+  "keywords": ["Eleventy", "Createbook", "Writebook."],
+  "author": "ginqi7@gmail.com",
   "dependencies": {
+    "@11ty/eleventy": "^3.1.2",
     "jsdom": "^26.1.0"
   }
 }

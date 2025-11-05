@@ -82,3 +82,12 @@ In your books directory:
 docker run -v $(pwd):/app/books -v $(pwd)/_site:/app/_site 11ty-createbook npx eleventy 
 ```
 
+### Utilizing the Docker Image in GHCR.
+In your books directory:
+```
+docker run -p 8080:8080 -v $(pwd):/app/books  ghcr.io/ginqi7/11ty-createbook
+```
+or
+```
+docker run -v $(pwd):/app/books -v $(pwd)/_site:/app/_site  ghcr.io/ginqi7/11ty-createbook npx eleventy 
+```
