@@ -90,6 +90,9 @@ function getAllBookInfos(collectionApi, dirPath) {
     const files = fs.readdirSync(dirPath);
     const bookInfos = [];
     for (const title of files) {
+        if (title.startsWith(".")) {
+            continue;
+        }
         const bookDir = path.join(dirPath, title);
         if (!fs.statSync(bookDir).isDirectory()) {
             continue;
@@ -100,7 +103,7 @@ function getAllBookInfos(collectionApi, dirPath) {
         // Book Cover
         const bookCover = path.join(bookDir, `cover.png`);
         if (fs.existsSync(bookCover)) {
-            bookInfo.cover = `/books/${title}/cover.png`;
+            bookInfo.cover = `books/${title}/cover.png`;
         }
 
         // Book Meta Data.
@@ -109,7 +112,7 @@ function getAllBookInfos(collectionApi, dirPath) {
             const fileContent = fs.readFileSync(bookJson, "utf8");
             const json = JSON.parse(fileContent);
             if (json.cover) {
-                json.cover = `/books/${title}/${json.cover}`;
+                json.cover = `books/${title}/${json.cover}`;
             }
             bookInfo = {
                 ...bookInfo,
