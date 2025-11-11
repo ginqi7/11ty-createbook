@@ -1,48 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Noto+Serif+TC:wght@200..900&display=swap");
 
-:root {
-    --inline-space: 1ch;
-    --inline-space-half: calc(var(--inline-space) / 2);
-    --inline-space-double: calc(var(--inline-space) * 2);
-
-    --block-space: 1rem;
-    --block-space-half: calc(var(--block-space) / 2);
-    --block-space-double: calc(var(--block-space) * 2);
-
-    --font-small-responsive: clamp(0.8rem, 2cqi, 1rem);
-    --font-medium-responsive: clamp(1rem, 2.5cqi, 1.4rem);
-    --font-large-responsive: clamp(1.3rem, 4cqi, 1.8rem);
-    --font-x-large-responsive: clamp(1.8rem, 5cqi, 3.2rem);
-}
-
 html,
 body {
-    --font-serif: Alegreya, "Noto Serif TC", serif;
-    --hover-color: var(--color-subtle-dark);
-    --hover-size: 0.15rem;
-    --hover-filter: brightness(1);
-
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: none;
     background: var(--color-bg);
     color: var(--color-ink);
     font-family: var(--font-serif);
-    font-size: 20px;
+    font-size: var(--font-size-base);
     line-height: 1.4;
     overflow: unset;
     scroll-behavior: auto;
     text-rendering: optimizeLegibility;
     text-size-adjust: none;
-
-    :lang(zh) {
-        font-size: 16px;
-    }
 }
-
-
-
-
 
 /* Text */
 .txt-small {

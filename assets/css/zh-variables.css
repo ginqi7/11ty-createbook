@@ -1,0 +1,5 @@
+:root {
+    /* zh language */
+    --font-size-base: 16px;
+    --inline-size: min(80ch, 75vw);
+}
