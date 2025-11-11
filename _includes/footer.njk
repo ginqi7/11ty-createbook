@@ -7,7 +7,7 @@
 <footer id="footer">
   <nav class="flex align-center gap justify-center">
     {% if (nextPage and nextPage.data.title == currentPage.data.title) %}
-    <a class="btn next_page" href="./{{ nextPage.url }}">
+    <a class="btn next_page" href=".{{ nextPage.url }}">
       <span class="overflow-ellipsis"> Next: {{ nextPage.fileSlug }} </span>
       <img
         aria-hidden="true"

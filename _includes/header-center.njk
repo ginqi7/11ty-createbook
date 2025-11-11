@@ -11,7 +11,7 @@
   {% set href = page.filePathStem | parentPath %}
   <span>▸</span>
   {% if type == "page" %}
-  <a href="./{{ href }}">
+  <a href=".{{ href }}">
     <strong> {{ title or page.filePathStem | bookTitle }} </strong>
   </a>
   <span>▸</span>

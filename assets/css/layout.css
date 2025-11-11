@@ -20,7 +20,7 @@ body {
 :where(#main) {
     container-type: inline-size;
     font-size: var(--font-medium-responsive);
-    inline-size: min(67ch, 75vw);
+    inline-size: var(--inline-size);
     margin-inline: auto;
     max-inline-size: 100vw;
     padding-block-end: clamp(var(--block-space), 5%, calc(var(--block-space) * 3));

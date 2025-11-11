@@ -91,3 +91,10 @@ or
 ```
 docker run -v $(pwd):/app/books -v $(pwd)/_site:/app/_site  ghcr.io/ginqi7/11ty-createbook npx eleventy 
 ```
+
+## Github Page
+You can easily publish your books on GitHub Pages:
+1. Create a repository that contains your books written in Markdown files.
+2. Create a GitHub Action to build the website (similar to [this](https://github.com/ginqi7/books/blob/main/.github/workflows/publish.yml)).
+3. Every time you push your books to the master branch, it will deploy a GitHub page. You can refer to [my books repository](https://github.com/ginqi7/books).
+
