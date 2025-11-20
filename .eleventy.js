@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import pluginWordcount from "./plugins/wordcount.js";
+import { execSync }  from 'child_process';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -95,7 +96,10 @@ export default function (eleventyConfig) {
         createbookBase = process.env.CREATEBOOK_BASE;
     } 
     eleventyConfig.addGlobalData("createbookBase", createbookBase);
-    
+    eleventyConfig.on('eleventy.after', () => {
+        
+        execSync(`[ -d "./_site" ] && [ -n "$(ls -A "./_site")" ] && npx -y pagefind --site ./_site`, { encoding: 'utf-8' })
+    })
 }
 
 function getAllBookInfos(collectionApi, dirPath) {

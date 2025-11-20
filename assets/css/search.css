@@ -1,0 +1,28 @@
+
+/* 使用伪元素创建遮罩层 */
+.search-container {
+    display: none;
+    :has(#search-toggle:checked) & {
+        display: flex;
+    }
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.search-frame {
+    position: relative; 
+    z-index: 1;     
+    padding: 2rem;
+    width: 80%;
+    max-width: 600px;
+    background-color: white;
+    border: 1px dotted #333;
+    border-radius: 8px;
+}
+
