@@ -5,18 +5,34 @@
     href="https://fonts.googleapis.com/css?family=Alegreya&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="assets/css/reset.css" />
-  <link rel="stylesheet" href="assets/css/colors.css" />
-  <link rel="stylesheet" href="assets/css/base.css" />
-  <link rel="stylesheet" href="assets/css/base-variables.css" />
+  <link rel="stylesheet" href= {{"assets/css/reset.css" | version }} />
+  <link rel="stylesheet" href={{ "assets/css/colors.css" | version }} />
+  <link rel="stylesheet" href={{ "assets/css/base.css" | version }} />
+  <link rel="stylesheet" href={{ "assets/css/base-variables.css" | version }} />
   {%set language = content | language %}
   {%if language == 'zh' %}
-  <link rel="stylesheet" href="assets/css/zh-variables.css" />
+  <link rel="stylesheet" href={{ "assets/css/zh-variables.css" | version }} />
   {%endif%}
-  <link rel="stylesheet" href="assets/css/layout.css" />
-  <link rel="stylesheet" href="assets/css/buttons.css" />
-  <link rel="stylesheet" href="assets/css/books.css" />
-  <link rel="stylesheet" href="assets/css/library.css" />
-  <link rel="stylesheet" href="assets/css/toc.css" />
-  <link rel="stylesheet" href="assets/css/header.css" />
+  <link rel="stylesheet" href={{ "assets/css/layout.css" | version }} />
+  <link rel="stylesheet" href={{ "assets/css/buttons.css" | version }} />
+  <link rel="stylesheet" href={{ "assets/css/books.css" | version }} />
+  <link rel="stylesheet" href={{ "assets/css/library.css" | version }} />
+  <link rel="stylesheet" href={{ "assets/css/toc.css" | version }} />
+  <link rel="stylesheet" href={{ "assets/css/header.css" | version }} />
+  <link rel="stylesheet" href={{ "assets/css/search.css" | version }} />
+  <link href="/pagefind/pagefind-modular-ui.css" rel="stylesheet">
+  <script src="/pagefind/pagefind-modular-ui.js"></script>
+  <!-- Pagefind will inject search results here -->
+  </div>
+  <script>
+window.addEventListener('DOMContentLoaded', (event) => {
+        const instance = new PagefindModularUI.Instance();
+        instance.add(new PagefindModularUI.Input({
+            containerElement: "#search"
+        }));
+        instance.add(new PagefindModularUI.ResultList({
+            containerElement: "#results"
+        }));
+});
+  </script>
 </head>

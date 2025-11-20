@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import pluginWordcount from "./plugins/wordcount.js";
+import { execSync }  from 'child_process';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -64,6 +65,18 @@ export default function (eleventyConfig) {
     eleventyConfig.addFilter("bookTitle", bookTitle);
     eleventyConfig.addFilter("language", language);
     eleventyConfig.addFilter("limitN", limitN);
+    eleventyConfig.addFilter("version", (path) => {
+        const date = new Date();
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        const hours = String(date.getHours()).padStart(2, '0');
+        const minutes = String(date.getMinutes()).padStart(2, '0');
+        const seconds = String(date.getSeconds()).padStart(2, '0');
+        const timestamp = `${year}${month}${day}${hours}${minutes}${seconds}`;
+        return `${path}?v=${timestamp}`;
+    });
+
 
     eleventyConfig.addGlobalData("layout", "page");
     eleventyConfig.addCollection("pages", function (collectionApi) {
@@ -83,7 +96,10 @@ export default function (eleventyConfig) {
         createbookBase = process.env.CREATEBOOK_BASE;
     } 
     eleventyConfig.addGlobalData("createbookBase", createbookBase);
-    
+    eleventyConfig.on('eleventy.after', () => {
+        
+        execSync(`[ -d "./_site" ] && [ -n "$(ls -A "./_site")" ] && npx -y pagefind --site ./_site`, { encoding: 'utf-8' })
+    })
 }
 
 function getAllBookInfos(collectionApi, dirPath) {
