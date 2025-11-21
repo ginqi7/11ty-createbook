@@ -19,10 +19,61 @@
     position: relative; 
     z-index: 1;     
     padding: 2rem;
+    padding-right: 3rem;
     width: 80%;
     max-width: 600px;
+    max-height: 80vh;
     background-color: white;
     border: 1px dotted #333;
     border-radius: 8px;
+    overflow-y: auto;
 }
 
+
+#search .pagefind-ui__search-clear {
+	width: calc(60px * var(--pagefind-ui-scale));
+	padding: 0;
+	background-color: transparent;
+	overflow: hidden;
+}
+
+#search .pagefind-ui__search-clear:focus {
+	outline: 1px solid var(--color-accent-2);
+}
+
+
+#search .pagefind-ui__result-link {
+	background-size: 100% 6px;
+	background-position: bottom;
+	background-repeat: repeat-x;
+	background-image: linear-gradient(
+		transparent,
+		transparent 5px,
+		var(--color-global-text) 5px,
+		var(--color-global-text)
+	);
+}
+
+#search .pagefind-ui__result-link:hover {
+	text-decoration: none;
+	background-image: linear-gradient(
+		transparent,
+		transparent 4px,
+		var(--color-link) 4px,
+		var(--color-link)
+	);
+}
+
+#close-search {
+    position: absolute; 
+    right: 0.5rem;
+    top: 2rem;
+    width: 2rem;
+    border-radius: 8px;
+    border: none;
+    height: calc(64px * var(--pagefind-ui-scale));
+}
+
+#close-search:hover {
+  cursor: pointer;
+}
