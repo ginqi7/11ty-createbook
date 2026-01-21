@@ -10,6 +10,9 @@ COPY package*.json ./
 # Install Project Dependencies
 RUN npm install
 
+# Install pandoc
+RUN apk add --no-cache pandoc
+
 # Copy the source code of the project
 COPY . .
 
