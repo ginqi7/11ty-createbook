@@ -10,5 +10,5 @@ layout: base
 <!-- book title -->
 {% set title = title or (page.filePathStem | bookTitle) %}
 <main id="main">
-  <article>{{ content | safe }}</article>
+  <article>{{ content | douban_card | safe }}</article>
 </main>
