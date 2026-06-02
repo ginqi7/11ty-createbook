@@ -14,7 +14,7 @@
   "author": "ginqi7@gmail.com",
   "dependencies": {
     "@11ty/eleventy": "^3.1.2",
-    "html-douban-card": "^0.0.2",
+    "html-douban-card": "^0.0.3",
     "jsdom": "^26.1.0",
     "node-pandoc": "^0.3.0",
     "pagefind": "^1.4.0"
